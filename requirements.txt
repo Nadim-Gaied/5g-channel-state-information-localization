@@ -1,0 +1,11 @@
+# Versions used for the final experiments (Python 3.11.5).
+deepmimo==4.0.5
+h5py==3.16.0
+matplotlib==3.11.2
+numpy==2.2.6
+pillow==12.3.0
+pytest==9.1.1
+scikit-learn==1.9.1
+scipy==1.17.1
+torch==2.13.0
+tqdm==4.70.1

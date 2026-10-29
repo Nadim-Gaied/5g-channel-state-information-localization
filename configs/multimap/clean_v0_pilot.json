@@ -1,0 +1,25 @@
+{
+  "name": "multimap_clean_v0_pilot",
+  "output_path": "data/multimap/pilot/city_0_newyork_3p5.npz",
+  "scenario_root": "deepmimo_scenarios",
+  "scenario": "city_0_newyork_3p5",
+  "rx_set": 0,
+  "tx_sets": "all",
+  "tx_index": 0,
+  "pilot_users": 512,
+  "sampling_seed": 2026,
+  "minimum_active_bts": 2,
+  "radio": {
+    "antenna_shape": [32, 1],
+    "antenna_spacing": 0.5,
+    "bandwidth_hz": 20000000,
+    "num_ofdm": 128,
+    "selected_subcarriers": 64,
+    "num_paths": 25
+  },
+  "map": {
+    "raster_size": [512, 512],
+    "resolution_m": 2.0,
+    "height_scale_m": 50.0
+  }
+}

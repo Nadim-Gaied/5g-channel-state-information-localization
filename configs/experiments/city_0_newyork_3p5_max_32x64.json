@@ -1,0 +1,50 @@
+{
+  "name": "city_0_newyork_3p5_max_32x64",
+  "description": "Single-BS New York 3.5 GHz experiment using all 25 stored paths and 32x64 CSI.",
+  "output_root": "outputs/experiments/city_0_newyork_3p5_max_32x64",
+  "dataset": {
+    "generator": "deepmimo_v4",
+    "scenario_root": "deepmimo_scenarios",
+    "raw_path": "data/raw/city_0_newyork_3p5_max_32x64.mat",
+    "processed_path": "data/processed/city_0_newyork_3p5_max_32x64.npz",
+    "deepmimo": {
+      "scenario": "city_0_newyork_3p5",
+      "tx_set": 3,
+      "tx_index": 0,
+      "rx_set": 0,
+      "antenna_shape": [32, 1],
+      "antenna_spacing": 0.5,
+      "bandwidth_hz": 20000000,
+      "num_ofdm": 128,
+      "ofdm_sampling_factor": 1,
+      "ofdm_limit": 64,
+      "num_paths": 25
+    }
+  },
+  "preprocessing": {
+    "representation": "real_imag",
+    "spatial_tile_size_m": [2.0, 1.0],
+    "split_seed": 2026,
+    "minimum_channel_power": 0.0
+  },
+  "training": {
+    "models": ["cnn_residual", "vit_deep"],
+    "seeds": [17, 42, 73],
+    "epochs": 35,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "scheduler": "warmup_cosine",
+    "warmup_epochs": 3,
+    "minimum_lr_ratio": 0.05,
+    "amp": true,
+    "device": "cuda",
+    "threads": 4,
+    "vit_patch_size": [4, 8]
+  },
+  "robustness": {
+    "snr_db": [30, 20, 10, 5, 0],
+    "noise_seed": 2026,
+    "batch_size": 128
+  }
+}

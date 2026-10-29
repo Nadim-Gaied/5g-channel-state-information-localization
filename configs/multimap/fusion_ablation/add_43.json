@@ -1,0 +1,31 @@
+{
+  "name": "fusion_add_43",
+  "data_config": "configs/multimap/full_city_batch.json",
+  "data_root": "data/multimap",
+  "normalization_path": "data/multimap/normalization/full_train_stats.npz",
+  "output_root": "outputs/multimap/fusion_ablation/add/seed_43",
+  "seed": 43,
+  "model": {
+    "embedding_dim": 128,
+    "num_heads": 4,
+    "set_depth": 2,
+    "fusion": "add"
+  },
+  "training": {
+    "epochs": 25,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "minimum_learning_rate": 1e-05,
+    "patience": 6,
+    "log_every_batches": 100,
+    "workers": 0,
+    "amp": true,
+    "map_size": [
+      256,
+      256
+    ],
+    "random_bts_subsets": true,
+    "minimum_bts": 2
+  }
+}

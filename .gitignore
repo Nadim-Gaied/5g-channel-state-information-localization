@@ -1,0 +1,21 @@
+# Local environments and caches
+.venv*/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Downloaded scenarios and generated datasets
+data/
+deepmimo_scenarios/
+RayTracing Scenarios/
+vendor/DeepMIMO-codes/
+
+# Training artifacts are reproducible from configs; curated figures live in assets/.
+outputs/
+report/figures/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
